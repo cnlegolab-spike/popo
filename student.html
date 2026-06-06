@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>레고에듀케이션 STEAMedu 청라센터 학생용 랭킹</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="header-inner">
+        <div>
+          <div class="eyebrow">Live Ranking</div>
+          <h1>레고에듀케이션 STEAMedu 청라센터</h1>
+          <div class="sub"><strong id="groupLabel">STEAM-L2 1Gr</strong> 이름이 입력된 참가자의 순위만 표시됩니다.</div>
+        </div>
+        <div class="actions">
+          <a class="button" href="./index.html">그룹 선택</a>
+          <button id="importJson">랭킹 파일 불러오기</button>
+          <input class="file-input" id="fileInput" type="file" accept="application/json">
+        </div>
+      </div>
+    </header>
+
+    <main class="layout student-layout">
+      <section class="content">
+        <div class="toolbar student-toolbar">
+          <input id="searchInput" placeholder="참가자 검색">
+          <select id="viewMode">
+            <option value="overall">합산 순위</option>
+            <option value="round">라운드별 순위</option>
+          </select>
+        </div>
+        <div class="round-grid student-rounds" id="roundButtons"></div>
+
+        <div class="panel">
+          <div class="section table-title">
+            <strong id="viewTitle">합산 순위</strong>
+            <span class="sub" id="viewSubtitle">관리자가 저장한 점수를 기준으로 표시됩니다.</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead id="tableHead"></thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="./firebase-config.js"></script>
+  <script src="./ranking-core.js"></script>
+  <script src="./student.js"></script>
+</body>
+</html>
